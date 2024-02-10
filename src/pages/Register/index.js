@@ -10,13 +10,20 @@ function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (name !== "" && email !== "" && password !== "") {
+    }
+  }
+
   return (
     <div className="Login">
       <main>
         <div className="login-area">
           <img src={logo} alt="Logo do sistema" />
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1>Registrar</h1>
           <input
             type="text"
