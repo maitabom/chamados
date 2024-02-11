@@ -10,13 +10,13 @@ import logo from "../../assets/logo.png";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { logon } = useContext(AuthContext);
+  const { logon, loadingAuth } = useContext(AuthContext);
 
-  function handleLogon(e) {
+  async function handleLogon(e) {
     e.preventDefault();
 
     if (email !== "" && password !== "") {
-      logon(email, password);
+      await logon(email, password);
     }
   }
 
@@ -40,7 +40,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="submit">Entrar</button>
+          <button type="submit">{loadingAuth ? "Aguarde" : "Entrar"}</button>
         </form>
         <Link to="/register">Criar uma conta</Link>
       </main>
