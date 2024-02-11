@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
+import Private from "./private";
+
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
@@ -9,7 +11,14 @@ function RoutesApp() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route
+        path="/dashboard"
+        element={
+          <Private>
+            <Dashboard />
+          </Private>
+        }
+      />
     </Routes>
   );
 }
