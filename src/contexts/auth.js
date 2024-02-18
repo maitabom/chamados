@@ -66,7 +66,7 @@ function AuthProvider({ children }) {
   async function logoff() {
     await signOut(auth);
     localStorage.removeItem("@tickets.user");
-    setUser(null)
+    setUser(null);
   }
 
   async function register(name, email, password) {
@@ -110,7 +110,17 @@ function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ signed: !!user, user, loading, loadingAuth, logon, logoff, register }}
+      value={{
+        signed: !!user,
+        user,
+        loading,
+        loadingAuth,
+        logon,
+        logoff,
+        register,
+        storageUser,
+        setUser,
+      }}
     >
       {children}
     </AuthContext.Provider>
