@@ -23,10 +23,15 @@
 }
 
 .dashboard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  display: block;
+  text-align: center;
+  padding: 2em;
+}
+
+.dashboard h2 {
+  margin: 2em 0;
+  font-size: 3.6em;
+  font-weight: 600;
 }
 
 table {
